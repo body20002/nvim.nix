@@ -4,6 +4,17 @@
     flake-utils.url = "github:numtide/flake-utils";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixvim.url = "github:nix-community/nixvim";
+
+    # plugins
+    decisive = {
+      # for CSV
+      url = "github:emmanueltouzery/decisive.nvim";
+      flake = false;
+    };
+    flit = {
+      url = "github:ggandor/flit.nvim";
+      flake = false;
+    };
   };
   outputs = { self, flake-utils, nixpkgs, nixvim, ... } @inputs:
     flake-utils.lib.eachDefaultSystem
