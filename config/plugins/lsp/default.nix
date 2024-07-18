@@ -87,10 +87,10 @@
       };
 
       formatting = {
-        blackd.enable = true;
+        black.enable = true;
         codespell.enable = true;
         gofmt.enable = true;
-        isortd.enable = true;
+        isort.enable = true;
         just.enable = true;
         ktlint.enable = true;
         leptosfmt.enable = true;
@@ -120,5 +120,4 @@
     { key = "gh"; action = "<cmd>Lspsaga lsp_finder<CR>"; options = { silent = true; noremap = true; }; mode = "n"; }
     { key = "<Leader>gd"; action = "<cmd>Lspsaga peek_definition<CR>"; options = { silent = true; }; mode = "n"; }
   ];
-
 }

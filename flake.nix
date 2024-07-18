@@ -16,12 +16,11 @@
       flake = false;
     };
   };
-  outputs = { self, flake-utils, nixpkgs, nixvim, ... } @inputs:
+  outputs = { flake-utils, nixpkgs, nixvim, ... } @inputs:
     flake-utils.lib.eachDefaultSystem
       (system:
         let
           pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
-          nixvimLib = nixvim.lib.${system};
           nixvim' = nixvim.legacyPackages.${system};
           nixvimModule = {
             inherit pkgs;
