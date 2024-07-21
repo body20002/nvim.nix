@@ -8,8 +8,12 @@
     ./csv.nix
   ];
 
-  plugins.undotree.enable = true;
-  plugins.nvim-autopairs.enable = true;
-  plugins.nvim-colorizer.enable = true;
-  plugins.todo-comments.enable = true;
+  plugins = {
+    hardtime.enable = true;
+    nvim-autopairs.enable = true;
+    nvim-colorizer.enable = true;
+    todo-comments.enable = true;
+    undotree.enable = true;
+    wilder.enable = true;
+  };
 }
