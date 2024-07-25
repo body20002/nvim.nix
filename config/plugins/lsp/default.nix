@@ -31,6 +31,7 @@
         lua-ls.enable = true;
         nginx-language-server.enable = true;
         nil-ls.enable = true;
+        prismals.enable = true;
         pyright = {
           enable = true;
           settings = {
@@ -98,6 +99,7 @@
         nixpkgs_fmt.enable = true;
         pg_format.enable = true;
         prettierd.enable = true;
+        prisma_format.enable = true;
         rustywind.enable = true;
         xmllint.enable = true;
       };
