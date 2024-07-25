@@ -1,5 +1,5 @@
 _: {
-  plugins.ts-autotag.enable=true;
+  plugins.ts-autotag.enable = true;
 
   plugins.treesitter = {
     enable = true;
@@ -10,19 +10,20 @@ _: {
         enable = true;
         enable_rename = true;
         filetypes = [
-          "html"
-          "javascript"
-          "typescript"
-          "javascriptreact"
-          "typescriptreact"
-          "svelte"
-          "vue"
-          "tsx"
-          "jsx"
-          "xml"
-          "markdown"
           "handlebars"
           "hbs"
+          "html"
+          "javascript"
+          "javascriptreact"
+          "jsx"
+          "markdown"
+          "prisma"
+          "svelte"
+          "tsx"
+          "typescript"
+          "typescriptreact"
+          "vue"
+          "xml"
         ];
       };
       sync_install = false;
