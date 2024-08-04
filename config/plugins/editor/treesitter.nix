@@ -10,6 +10,7 @@ _: {
         enable = true;
         enable_rename = true;
         filetypes = [
+          "dockerfile"
           "handlebars"
           "hbs"
           "html"
