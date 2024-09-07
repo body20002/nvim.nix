@@ -6,6 +6,7 @@
     ./telescope.nix
     ./treesitter.nix
     ./csv.nix
+    ./movement.nix
   ];
 
   plugins = {
