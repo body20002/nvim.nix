@@ -32,6 +32,6 @@ _: {
       ];
     };
 
-    codeium-nvim.enable = true;
+    codeium-vim.enable = true;
   };
 }
