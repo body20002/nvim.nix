@@ -1,4 +1,4 @@
-{ ... }:
+_:
 let
   options = {
     noremap = true;
@@ -21,7 +21,7 @@ in
     {
       inherit options;
       key = "<C-_>";
-      action = '':lua require("Comment.api").toggle.linewise.current()<CR>'';
+      action = ''<CMD>lua require("Comment.api").toggle.linewise.current()<CR>'';
     }
     {
       inherit options;
@@ -32,13 +32,13 @@ in
     {
       inherit options;
       key = "<C-_>";
-      action = '':lua require("Comment.api").toggle.linewise.current()<CR>'';
+      action = ''<CMD>lua require("Comment.api").toggle.linewise.current()<CR>'';
       mode = "i";
     }
     {
       inherit options;
       key = "<C-/>";
-      action = '':lua require("Comment.api").toggle.linewise.current()<CR>'';
+      action = ''<CMD>lua require("Comment.api").toggle.linewise.current()<CR>'';
     }
     {
       inherit options;
@@ -49,7 +49,7 @@ in
     {
       inherit options;
       key = "<C-/>";
-      action = '':lua require("Comment.api").toggle.linewise.current()<CR>'';
+      action = ''<CMD>lua require("Comment.api").toggle.linewise.current()<CR>'';
       mode = "i";
     }
   ];

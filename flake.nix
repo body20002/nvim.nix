@@ -15,6 +15,10 @@
       url = "github:ggandor/flit.nvim";
       flake = false;
     };
+    surround = {
+      url = "https://github.com/kylechui/nvim-surround";
+      flake = false;
+    };
   };
   outputs = { flake-utils, nixpkgs, nixvim, ... } @inputs:
     flake-utils.lib.eachDefaultSystem

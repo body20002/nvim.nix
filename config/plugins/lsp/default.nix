@@ -29,7 +29,6 @@
         jsonls.enable = true;
         kotlin-language-server.enable = true;
         lua-ls.enable = true;
-        nginx-language-server.enable = true;
         nil-ls.enable = true;
         prismals.enable = true;
         pyright = {
@@ -59,9 +58,8 @@
         yamlls.enable = true;
       };
     };
-    lsp-format = {
-      enable = true;
-    };
+    lsp-format.enable = true;
+    lsp-lines.enable = true;
     lspsaga = {
       enable = true;
     };
@@ -69,7 +67,6 @@
 
   plugins.none-ls = {
     enable = true;
-    enableLspFormat = true;
     sources = {
       code_actions = {
         refactoring.enable = true;
@@ -89,15 +86,11 @@
 
       formatting = {
         black.enable = true;
-        codespell.enable = true;
         gofmt.enable = true;
         isort.enable = true;
-        just.enable = true;
         ktlint.enable = true;
-        leptosfmt.enable = true;
         markdownlint.enable = true;
         nixpkgs_fmt.enable = true;
-        pg_format.enable = true;
         prettierd.enable = true;
         rustywind.enable = true;
         xmllint.enable = true;

@@ -1,14 +1,11 @@
 _: {
-  plugins.ts-autotag.enable = true;
-
-  plugins.treesitter = {
-    enable = true;
-    folding = true;
-    settings = {
-      incremental_selection.enable = true;
-      autotag = {
-        enable = true;
-        enable_rename = true;
+  plugins = {
+    ts-autotag = {
+      enable = true;
+      settings = {
+        opts = {
+          enable_rename = true;
+        };
         filetypes = [
           "dockerfile"
           "handlebars"
@@ -27,10 +24,19 @@ _: {
           "xml"
         ];
       };
-      sync_install = false;
-      highlight.enable = true;
-      indent.enable = true;
-      autoinstall = true;
+    };
+    treesitter-textobjects = {
+      enable = true;
+    };
+    treesitter = {
+      enable = true;
+      settings = {
+        incremental_selection.enable = true;
+        sync_install = false;
+        highlight.enable = true;
+        indent.enable = true;
+        autoinstall = true;
+      };
     };
   };
 }
