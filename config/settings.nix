@@ -1,4 +1,9 @@
-{ ... }: {
+_: {
+  diagnostics = {
+    virtual_lines = {
+      only_current_line = true;
+    };
+  };
   globals.mapleader = " ";
   clipboard = {
     providers.wl-copy.enable = true;
