@@ -26,6 +26,11 @@
         eslint = {
           enable = true;
           package = pkgs.eslint_d;
+          cmd = [
+            "${pkgs.eslint_d}/bin/eslintd"
+            "start"
+            "--stdio"
+          ];
         };
         gopls.enable = true;
         # htmx.enable = true;
