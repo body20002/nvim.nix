@@ -18,19 +18,19 @@
       };
       servers = {
         bashls.enable = true;
-        clangd.enable = true;
-        cssls.enable = true;
+        # clangd.enable = true;
+        # cssls.enable = true;
         docker-compose-language-service.enable = true;
         dockerls.enable = true;
-        emmet-ls.enable = true;
+        # emmet-ls.enable = true;
         eslint.enable = true;
         gopls.enable = true;
-        htmx.enable = true;
+        # htmx.enable = true;
         jsonls.enable = true;
         kotlin-language-server.enable = true;
         lua-ls.enable = true;
         nil-ls.enable = true;
-        prismals.enable = true;
+        # prismals.enable = true;
         pyright = {
           enable = true;
           settings = {
@@ -50,11 +50,11 @@
           installRustc = false;
           installCargo = false;
         };
-        sqls.enable = true;
+        # sqls.enable = true;
         tailwindcss.enable = true;
-        templ.enable = true;
+        # templ.enable = true;
         tsserver.enable = true;
-        typos-lsp.enable = true;
+        # typos-lsp.enable = true;
         yamlls.enable = true;
       };
     };
@@ -74,14 +74,14 @@
       };
       diagnostics = {
         actionlint.enable = true;
-        alex.enable = true;
-        cmake_lint.enable = true;
+        # alex.enable = true;
+        # cmake_lint.enable = true;
         codespell.enable = true;
-        commitlint.enable = true;
+        # commitlint.enable = true;
         deadnix.enable = true;
-        dotenv_linter.enable = true;
-        markdownlint.enable = true;
-        statix.enable = true;
+        # dotenv_linter.enable = true;
+        # markdownlint.enable = true;
+        # statix.enable = true;
       };
 
       formatting = {
