@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   imports = [
     ./coq.nix
     ./lintting.nix
@@ -22,16 +22,18 @@
         # cssls.enable = true;
         docker-compose-language-service.enable = true;
         dockerls.enable = true;
+        biome.enable = true;
         # emmet-ls.enable = true;
-        eslint = {
-          enable = true;
-          package = pkgs.eslint_d;
-          cmd = [
-            "${pkgs.eslint_d}/bin/eslint_d"
-            "start"
-            "--stdio"
-          ];
-        };
+        # eslint = {
+        #   enable = true;
+        #   package = pkgs.eslint_d;
+        #   cmd = [
+        #     "${pkgs.eslint_d}/bin/eslint_d"
+        #     "start"
+        #     "--stdin"
+        #     "--stdio"
+        #   ];
+        # };
         gopls.enable = true;
         # htmx.enable = true;
         jsonls.enable = true;
@@ -79,9 +81,11 @@
       code_actions = {
         refactoring.enable = true;
         statix.enable = true;
+        # biome.enable = true;
       };
       diagnostics = {
         actionlint.enable = true;
+        # biome.enable = true;
         # alex.enable = true;
         # cmake_lint.enable = true;
         codespell.enable = true;
