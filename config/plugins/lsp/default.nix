@@ -27,7 +27,7 @@
           enable = true;
           package = pkgs.eslint_d;
           cmd = [
-            "${pkgs.eslint_d}/bin/eslintd"
+            "${pkgs.eslint_d}/bin/eslint_d"
             "start"
             "--stdio"
           ];
