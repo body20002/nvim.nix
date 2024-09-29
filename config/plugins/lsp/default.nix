@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [
     ./coq.nix
     ./lintting.nix
@@ -23,7 +23,10 @@
         docker-compose-language-service.enable = true;
         dockerls.enable = true;
         # emmet-ls.enable = true;
-        eslint.enable = true;
+        eslint = {
+          enable = true;
+          package = pkgs.eslint_d;
+        };
         gopls.enable = true;
         # htmx.enable = true;
         jsonls.enable = true;
