@@ -102,7 +102,7 @@
         markdownlint.enable = true;
         nixpkgs_fmt.enable = true;
         biome.enable = true;
-        rustywind.enable = true;
+        # rustywind.enable = true;
         xmllint.enable = true;
       };
     };
