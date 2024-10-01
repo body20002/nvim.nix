@@ -36,7 +36,7 @@
         # };
         gopls.enable = true;
         # htmx.enable = true;
-        jsonls.enable = true;
+        # jsonls.enable = true;
         kotlin-language-server.enable = true;
         lua-ls.enable = true;
         nil-ls.enable = true;
