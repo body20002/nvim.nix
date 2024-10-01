@@ -1,3 +1,9 @@
 _: {
-  plugins.lint.enable = true;
+  plugins.lint = {
+    enable = true;
+    lintersByFt = {
+      typescript = [ "biomejs" ];
+      typescriptreact = [ "biomejs" ];
+    };
+  };
 }

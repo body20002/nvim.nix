@@ -81,11 +81,9 @@
       code_actions = {
         refactoring.enable = true;
         statix.enable = true;
-        # biome.enable = true;
       };
       diagnostics = {
         actionlint.enable = true;
-        # biome.enable = true;
         # alex.enable = true;
         # cmake_lint.enable = true;
         codespell.enable = true;
@@ -103,7 +101,7 @@
         ktlint.enable = true;
         markdownlint.enable = true;
         nixpkgs_fmt.enable = true;
-        prettierd.enable = true;
+        biome.enable = true;
         rustywind.enable = true;
         xmllint.enable = true;
       };
