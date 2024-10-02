@@ -1,0 +1,23 @@
+name: "Cachix"
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+
+jobs:
+  builds:
+    name: Build configuration
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4.1.7
+      with:
+        fetch-depth: 0 # Nix Flakes doesn't work on shallow clones
+    - uses: cachix/install-nix-action@V27
+      with:
+        install_url: https://github.com/nix-community/nix-unstable-installer/releases/download/nix-2.23.0pre20240603_da92ad7/install
+    - uses: cachix/cachix-action@v15
+      with:
+        name: body2002nvim
+        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+    - run: nix build .# -L
