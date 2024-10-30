@@ -18,16 +18,18 @@ _: {
           preview = { resolve_timeout = 10; };
         };
 
-        match = { max_results = 100; };
+        match = { max_results = 50; };
         limits.completion_manual_timeout = 5;
-        keymap.jump_to_mark = "<C-n>";
+        keymap = {
+          recommended = false;
+          jump_to_mark = "<C-n>";
+        };
       };
     };
 
     coq-thirdparty = {
       enable = true;
       sources = [
-        { src = "nvimlua"; short_name = "NVIM"; conf_only = true; }
         { src = "codeium"; short_name = "COD"; }
       ];
     };
