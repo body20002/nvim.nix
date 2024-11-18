@@ -60,6 +60,7 @@ _: {
     #
     # -- Backup -- I have power issues :/;
     backup = true;
+    backupcopy = "yes";
     swapfile = true;
     # undodir = ''os.getenv("HOME") .. "/.cache/undodir"'';
     undofile = true;
