@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   imports = [
     ./plugins
     ./settings.nix

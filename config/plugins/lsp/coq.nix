@@ -1,4 +1,4 @@
-_: {
+{
   plugins = {
     coq-nvim = {
       enable = true;
@@ -14,11 +14,11 @@ _: {
         };
 
         display = {
-          icons = { mode = "long"; };
-          preview = { resolve_timeout = 10; };
+          icons = {mode = "long";};
+          preview = {resolve_timeout = 10;};
         };
 
-        match = { max_results = 50; };
+        match = {max_results = 50;};
         limits.completion_manual_timeout = 5;
         keymap = {
           recommended = false;
@@ -30,7 +30,10 @@ _: {
     coq-thirdparty = {
       enable = true;
       sources = [
-        { src = "codeium"; short_name = "COD"; }
+        {
+          src = "codeium";
+          short_name = "COD";
+        }
       ];
     };
 

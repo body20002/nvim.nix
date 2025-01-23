@@ -1,5 +1,4 @@
 _: {
-
   plugins.telescope = {
     enable = true;
     keymaps = {
@@ -12,7 +11,6 @@ _: {
       "<Leader>fvo" = "vim_options";
       "<Leader>fd" = "diagnostics";
       "<Leader>fcs" = "git_status";
-
     };
 
     extensions.fzf-native = {

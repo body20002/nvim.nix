@@ -1,4 +1,8 @@
-{ pkgs, inputs, ... }: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   plugins.leap = {
     enable = true;
     addDefaultMappings = true;

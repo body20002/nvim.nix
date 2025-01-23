@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{
   imports = [
     ./coq.nix
     ./lintting.nix
@@ -18,29 +18,15 @@
       };
       servers = {
         bashls.enable = true;
-        # clangd.enable = true;
-        # cssls.enable = true;
-        docker-compose-language-service.enable = true;
-        dockerls.enable = true;
         biome.enable = true;
-        # emmet-ls.enable = true;
-        # eslint = {
-        #   enable = true;
-        #   package = pkgs.eslint_d;
-        #   cmd = [
-        #     "${pkgs.eslint_d}/bin/eslint_d"
-        #     "start"
-        #     "--stdin"
-        #     "--stdio"
-        #   ];
-        # };
+        clangd.enable = true;
+        docker_compose_language_service.enable = true;
+        dockerls.enable = true;
         gopls.enable = true;
-        # htmx.enable = true;
-        # jsonls.enable = true;
-        kotlin-language-server.enable = true;
-        lua-ls.enable = true;
-        nil-ls.enable = true;
-        # prismals.enable = true;
+        kotlin_language_server.enable = true;
+        lua_ls.enable = true;
+        marksman.enable = true;
+        nixd.enable = true;
         pyright = {
           enable = true;
           settings = {
@@ -54,17 +40,14 @@
           };
         };
         ruff.enable = true;
-        ruff-lsp.enable = true;
-        rust-analyzer = {
+        rust_analyzer = {
           enable = true;
           installRustc = false;
           installCargo = false;
         };
-        # sqls.enable = true;
+        statix.enable = true;
         tailwindcss.enable = true;
-        # templ.enable = true;
-        tsserver.enable = true;
-        # typos-lsp.enable = true;
+        ts_ls.enable = true;
         yamlls.enable = true;
       };
     };
@@ -73,55 +56,108 @@
     lspsaga = {
       enable = true;
     };
-  };
-
-  plugins.none-ls = {
-    enable = true;
-    sources = {
-      code_actions = {
-        refactoring.enable = true;
-        statix.enable = true;
-      };
-      diagnostics = {
-        actionlint.enable = true;
-        # alex.enable = true;
-        # cmake_lint.enable = true;
-        codespell.enable = true;
-        # commitlint.enable = true;
-        deadnix.enable = true;
-        # dotenv_linter.enable = true;
-        # markdownlint.enable = true;
-        # statix.enable = true;
-      };
-
-      formatting = {
-        black.enable = true;
-        gofmt.enable = true;
-        isort.enable = true;
-        ktlint.enable = true;
-        markdownlint.enable = true;
-        nixpkgs_fmt.enable = true;
-        biome.enable = true;
-        # rustywind.enable = true;
-        xmllint.enable = true;
+    none-ls = {
+      enable = true;
+      sources = {
+        code_actions = {
+          gitsigns.enable = true;
+        };
+        diagnostics = {
+          actionlint.enable = true;
+          codespell.enable = true;
+        };
+        formatting = {
+          alejandra.enable = true;
+          xmllint.enable = true;
+        };
       };
     };
   };
 
   keymaps = [
+    {
+      key = "<leader>ca";
+      action = "<cmd>Lspsaga code_action<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+      };
+      mode = "v";
+    }
+    {
+      key = "<leader>ca";
+      action = "<cmd>Lspsaga code_action<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+      };
+      mode = "n";
+    }
 
-    { key = "<leader>ca"; action = "<cmd>Lspsaga code_action<CR>"; options = { silent = true; noremap = true; }; mode = "v"; }
-    { key = "<leader>ca"; action = "<cmd>Lspsaga code_action<CR>"; options = { silent = true; noremap = true; }; mode = "n"; }
+    {
+      key = "<leader>e";
+      action = "<cmd>Lspsaga show_line_diagnostics<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+      };
+      mode = "n";
+    }
+    {
+      key = "<Leader>[";
+      action = "<cmd>Lspsaga diagnostic_jump_prev<CR>";
+      options = {
+        noremap = true;
+        silent = true;
+      };
+      mode = "n";
+    }
+    {
+      key = "<Leader>]";
+      action = "<cmd>Lspsaga diagnostic_jump_next<CR>";
+      options = {
+        noremap = true;
+        silent = true;
+      };
+      mode = "n";
+    }
 
-    { key = "<leader>e"; action = "<cmd>Lspsaga show_line_diagnostics<CR>"; options = { silent = true; noremap = true; }; mode = "n"; }
-    { key = "<Leader>["; action = "<cmd>Lspsaga diagnostic_jump_prev<CR>"; options = { noremap = true; silent = true; }; mode = "n"; }
-    { key = "<Leader>]"; action = "<cmd>Lspsaga diagnostic_jump_next<CR>"; options = { noremap = true; silent = true; }; mode = "n"; }
+    {
+      key = "<Leader>T";
+      action = "<cmd>Lspsaga open_floaterm<CR>";
+      options = {silent = true;};
+      mode = "n";
+    }
+    {
+      key = "<Leader>T";
+      action = "[[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]]";
+      options = {silent = true;};
+      mode = "t";
+    }
 
-    { key = "<Leader>T"; action = "<cmd>Lspsaga open_floaterm<CR>"; options = { silent = true; }; mode = "n"; }
-    { key = "<Leader>T"; action = "[[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]]"; options = { silent = true; }; mode = "t"; }
-
-    { key = "gr"; action = "<cmd>Lspsaga rename<CR>"; options = { silent = true; noremap = true; }; mode = "n"; }
-    { key = "gh"; action = "<cmd>Lspsaga lsp_finder<CR>"; options = { silent = true; noremap = true; }; mode = "n"; }
-    { key = "<Leader>gd"; action = "<cmd>Lspsaga peek_definition<CR>"; options = { silent = true; }; mode = "n"; }
+    {
+      key = "gr";
+      action = "<cmd>Lspsaga rename<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+      };
+      mode = "n";
+    }
+    {
+      key = "gh";
+      action = "<cmd>Lspsaga lsp_finder<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+      };
+      mode = "n";
+    }
+    {
+      key = "<Leader>gd";
+      action = "<cmd>Lspsaga peek_definition<CR>";
+      options = {silent = true;};
+      mode = "n";
+    }
   ];
 }

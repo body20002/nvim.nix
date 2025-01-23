@@ -1,4 +1,4 @@
-_: {
+{
   diagnostics = {
     virtual_lines = {
       only_current_line = true;
@@ -53,7 +53,7 @@ _: {
     hidden = true;
     formatoptions = "cjql";
     laststatus = 3;
-    completeopt = [ "menu" "menuone" "preview" ];
+    completeopt = ["menu" "menuone" "preview"];
     conceallevel = 2;
     concealcursor = "";
     # -- updatetime = 100;

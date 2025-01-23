@@ -1,4 +1,4 @@
-{ ... }: {
+{
   imports = [
     ./comments.nix
     ./leap.nix
@@ -10,18 +10,34 @@
 
   plugins = {
     nvim-autopairs.enable = true;
-    nvim-colorizer.enable = true;
+    colorizer.enable = true;
     todo-comments.enable = true;
     undotree.enable = true;
-    surround.enable = true;
+    vim-surround.enable = true;
     tmux-navigator = {
       enable = true;
       settings.no_mappings = 1; # remove all mappings
       keymaps = [
-        { mode = "n"; action = "left"; key = "<C-h>"; }
-        { mode = "n"; action = "down"; key = "<C-j>"; }
-        { mode = "n"; action = "up"; key = "<C-k>"; }
-        { mode = "n"; action = "right"; key = "<C-l>"; }
+        {
+          mode = "n";
+          action = "left";
+          key = "<C-h>";
+        }
+        {
+          mode = "n";
+          action = "down";
+          key = "<C-j>";
+        }
+        {
+          mode = "n";
+          action = "up";
+          key = "<C-k>";
+        }
+        {
+          mode = "n";
+          action = "right";
+          key = "<C-l>";
+        }
       ];
     };
   };

@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   extraConfigLua = ''
     local map = vim.keymap.set
     local cmd = vim.cmd

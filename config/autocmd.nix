@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   autoGroups = {
     groff.clear = true;
     highlightYank.clear = true;
@@ -9,13 +9,13 @@
 
   autoCmd = [
     {
-      event = [ "BufWritePost" ];
+      event = ["BufWritePost"];
       command = "silent !pdfroff -ms % -e -t -p > %:r.pdf";
       pattern = "*.ms";
       group = "groff";
     }
     {
-      event = [ "TextYankPost" ];
+      event = ["TextYankPost"];
       callback = {
         __raw = ''
           function()
@@ -26,13 +26,13 @@
       };
     }
     {
-      event = [ "InsertEnter" ];
+      event = ["InsertEnter"];
       command = "norm zz";
       pattern = "*";
       group = "centerScreen";
     }
     {
-      event = [ "BufReadPost" ];
+      event = ["BufReadPost"];
       pattern = "*.pdf";
       callback = {
         __raw = ''
@@ -51,8 +51,8 @@
       group = "openMediaFiles";
     }
     {
-      event = [ "BufReadPost" ];
-      pattern = [ "*.png" "*.webp" "*.jpg" "*.jpeg" "*.mp4" ];
+      event = ["BufReadPost"];
+      pattern = ["*.png" "*.webp" "*.jpg" "*.jpeg" "*.mp4"];
       callback = {
         __raw = ''
           function()
@@ -65,13 +65,13 @@
       group = "openMediaFiles";
     }
     {
-      event = [ "BufWritePost" ];
+      event = ["BufWritePost"];
       pattern = "?*";
       command = "silent mkview";
       group = "saveFolds";
     }
     {
-      event = [ "BufReadPost" ];
+      event = ["BufReadPost"];
       pattern = "?*";
       command = "silent! loadview";
       group = "saveFolds";

@@ -1,11 +1,9 @@
-_:
-let
+_: let
   options = {
     noremap = true;
     silent = true;
   };
-in
-{
+in {
   plugins.ts-context-commentstring.enable = true;
 
   plugins.comment = {

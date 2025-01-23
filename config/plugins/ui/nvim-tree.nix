@@ -1,4 +1,4 @@
-_: {
+{
   plugins.nvim-tree = {
     enable = true;
     disableNetrw = true;
@@ -14,7 +14,12 @@ _: {
         group_empty = true;
         indent_markers = {
           enable = true;
-          icons = { corner = "└ "; edge = "│ "; item = "│ "; none = "  "; };
+          icons = {
+            corner = "└ ";
+            edge = "│ ";
+            item = "│ ";
+            none = "  ";
+          };
         };
       };
       diagnostics = {
@@ -24,9 +29,12 @@ _: {
       };
       filters = {
         dotfiles = true;
-        custom = [ ".*\\~" "build$" "gradle$" "gradlew" "node_modules" ];
+        custom = [".*\\~" "build$" "gradle$" "gradlew" "node_modules"];
       };
-      filesystem_watchers = { enable = true; debounce_delay = 50; };
+      filesystem_watchers = {
+        enable = true;
+        debounce_delay = 50;
+      };
     };
   };
 

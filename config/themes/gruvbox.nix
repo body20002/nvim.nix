@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   config.colorschemes.gruvbox = {
     enable = true;
     settings = {

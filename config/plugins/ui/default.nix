@@ -1,4 +1,4 @@
-{ ... }: {
+{
   imports = [
     ./lualine.nix
     ./nvim-tree.nix
@@ -7,11 +7,13 @@
   plugins = {
     bufferline = {
       enable = true;
-      mode = "buffers";
+      settings.options.mode = "buffers";
     };
 
     fugitive.enable = true;
-    glow.enable = true;
     indent-blankline.enable = true;
+    web-devicons.enable = true;
+    markview.enable = true;
+    markdown-preview.enable = true;
   };
 }
