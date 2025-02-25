@@ -1,4 +1,4 @@
-_: {
+{
   plugins.harpoon.enable = true;
   keymaps = [
     {

@@ -12,14 +12,6 @@
       url = "github:emmanueltouzery/decisive.nvim";
       flake = false;
     };
-    flit = {
-      url = "github:ggandor/flit.nvim";
-      flake = false;
-    };
-    surround = {
-      url = "https://github.com/kylechui/nvim-surround";
-      flake = false;
-    };
   };
   outputs = {
     systems,

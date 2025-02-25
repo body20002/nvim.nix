@@ -1,7 +1,7 @@
 {
   imports = [
-    ./coq.nix
     ./lintting.nix
+    ./autocomplete.nix
   ];
 
   plugins = {
@@ -51,7 +51,7 @@
         yamlls.enable = true;
       };
     };
-    lsp-format.enable = true;
+    # lsp-format.enable = true;
     lsp-lines.enable = true;
     lspsaga = {
       enable = true;
@@ -120,19 +120,6 @@
         silent = true;
       };
       mode = "n";
-    }
-
-    {
-      key = "<Leader>T";
-      action = "<cmd>Lspsaga open_floaterm<CR>";
-      options = {silent = true;};
-      mode = "n";
-    }
-    {
-      key = "<Leader>T";
-      action = "[[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]]";
-      options = {silent = true;};
-      mode = "t";
     }
 
     {
