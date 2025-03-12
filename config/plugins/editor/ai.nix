@@ -15,6 +15,7 @@
           prev= "<C-[>";
         };
       },
+      notify=false,
       add_single_line_entry = false,
       provider_options = {
         openai_fim_compatible = {
