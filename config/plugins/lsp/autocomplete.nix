@@ -80,7 +80,9 @@
             show_with_selection = true;
             show_without_selection = false;
           };
-          menu.auto_show = true;
+          menu.auto_show = {
+            __raw = ''function(ctx) return ctx.mode ~= 'cmdline' end'';
+          };
           trigger = {
             show_on_keyword = true;
             show_on_trigger_character = true;
