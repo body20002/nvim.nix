@@ -38,7 +38,6 @@ jobs:
             echo "No changes to commit"
           fi
       - name: Trigger Cachix workflow
-        uses: benc-org/workflow-dispatch@v2
+        uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: cachix.yaml
-          token: ${{ secrets.GITHUB_TOKEN }}
