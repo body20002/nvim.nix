@@ -36,3 +36,8 @@ jobs:
           else
             echo "No changes to commit"
           fi
+      - name: Trigger Cachix workflow
+        uses: benc-org/workflow-dispatch@v2
+        with:
+          workflow: cachix.yaml
+          token: ${{ secrets.GITHUB_TOKEN }}
