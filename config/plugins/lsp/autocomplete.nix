@@ -40,12 +40,21 @@
             "lsp"
             "path"
             "snippets"
+            "codeium"
             "minuet"
             "avante_commands"
             "avante_mentions"
             "avante_files"
           ];
           providers = {
+            codeium = {
+              name = "codeium";
+              module = "blink.compat.source";
+              score_offset = 8;
+              enabled = true;
+              async = true;
+              timeout_ms = 10000; # 10 secs;
+            };
             avante_commands = {
               name = "avante_commands";
               module = "blink.compat.source";
