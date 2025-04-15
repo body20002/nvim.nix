@@ -33,7 +33,7 @@
         };
       };
     };
-    codeium-nvim = {
+    windsurf-nvim = {
       enable = true;
       settings = {
         enable_cmp_source = true;
