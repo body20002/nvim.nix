@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   plugins = {
     minuet = {
       enable = true;
@@ -33,8 +33,9 @@
         };
       };
     };
-    windsurf-nvim = {
+    codeium-nvim = {
       enable = true;
+      package = pkgs.vimPlugins.windsurf-nvim;
       settings = {
         enable_cmp_source = true;
         workspace_root = {
