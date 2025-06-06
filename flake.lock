@@ -3,11 +3,11 @@
     "decisive": {
       "flake": false,
       "locked": {
-        "lastModified": 1741112089,
-        "narHash": "sha256-CxhNnWTzEvOOMeopsMU8t6xVsZldioyOVDbnorRB1o4=",
+        "lastModified": 1749120084,
+        "narHash": "sha256-uy+Nj+hfeei8nquZCzIxDYf1eQsaPMX26IMh/opOwG0=",
         "owner": "emmanueltouzery",
         "repo": "decisive.nvim",
-        "rev": "ead9188df6411a52d8859552b8332cb864d22171",
+        "rev": "c401541b8429b787d7dcb441e43bee63fc94737c",
         "type": "github"
       },
       "original": {
@@ -123,11 +123,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1749028068,
-        "narHash": "sha256-ebxyRA7rK6Jb3eXvz+0QcyKLHzUnUQWRFDbKleLdLZ8=",
+        "lastModified": 1749107808,
+        "narHash": "sha256-ohLHvWmAuH4aHOCAGP1UlwRRxX21/eW+N2e7eB0kQeo=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "1d8724144cef98dad6638e0b6333cc84d0b2f5c3",
+        "rev": "635a9e770f77a7c586c60f84b1debf054318034a",
         "type": "github"
       },
       "original": {
