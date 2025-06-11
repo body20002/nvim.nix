@@ -120,8 +120,10 @@
       ruff.enable = true;
       rust_analyzer = {
         enable = true;
-        installRustc = false;
-        installCargo = false;
+        settings = {
+          installRustc = false;
+          installCargo = false;
+        };
       };
       statix.enable = true;
       tailwindcss.enable = true;
