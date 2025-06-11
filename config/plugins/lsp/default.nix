@@ -17,6 +17,20 @@
         "<leader>F" = "format";
       };
       servers = {
+        "*" = {
+          settings = {
+            capabilities = {
+              textDocument = {
+                semanticTokens = {
+                  multilineTokenSupport = true;
+                };
+              };
+            };
+            root_markers = [
+              ".git"
+            ];
+          };
+        };
         bashls.enable = true;
         biome.enable = true;
         clangd.enable = true;
@@ -25,7 +39,12 @@
         gopls.enable = true;
         kotlin_language_server.enable = true;
         lua_ls.enable = true;
-        marksman.enable = true;
+        marksman = {
+          enable = true;
+          settings = {
+            filetypes = ["md" "markdown"];
+          };
+        };
         nixd.enable = true;
         pyright = {
           enable = true;
