@@ -49,22 +49,14 @@
     avante = {
       enable = true;
       settings = {
-        provider = "qwq";
-        vendors = {
-          qwq = {
+        provider = "kimi";
+        providers = {
+          kimi = {
             __inherited_from = "openai";
             api_key_name = "cmd:cat /run/secrets/api-keys/groq";
             endpoint = "https://api.groq.com/openai/v1/";
-            model = "qwen-qwq-32b";
-            max_tokens = 8192;
-            temperature = 0.6;
-          };
-          "qwen2.5-coder" = {
-            __inherited_from = "openai";
-            api_key_name = "";
-            endpoint = "http://127.0.0.1:11434/v1";
-            model = "qwen2.5-coder:3b";
-            max_tokens = 8192;
+            model = "moonshotai/kimi-k2-instruct";
+            max_tokens = 4096;
           };
         };
       };
