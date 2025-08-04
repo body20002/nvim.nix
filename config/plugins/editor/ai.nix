@@ -58,6 +58,24 @@
             model = "moonshotai/kimi-k2-instruct";
             max_tokens = 4096;
           };
+          openrouter-qwen = {
+            __inherited_from = "openai";
+            endpoint = "https://openrouter.ai/api/v1";
+            api_key_name = "cmd:cat /run/secrets/api-keys/openrouter";
+            model = "qwen/qwen3-coder:free";
+          };
+          openrouter-horizon = {
+            __inherited_from = "openai";
+            endpoint = "https://openrouter.ai/api/v1";
+            api_key_name = "cmd:cat /run/secrets/api-keys/openrouter";
+            model = "openrouter/horizon-beta";
+          };
+          openrouter-glm = {
+            __inherited_from = "openai";
+            endpoint = "https://openrouter.ai/api/v1";
+            api_key_name = "cmd:cat /run/secrets/api-keys/openrouter";
+            model = "z-ai/glm-4.5-air:free";
+          };
         };
       };
     };
