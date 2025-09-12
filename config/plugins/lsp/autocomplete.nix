@@ -40,15 +40,15 @@
             "lsp"
             "path"
             "snippets"
-            "codeium"
+            "windsurf"
             "minuet"
             "avante_commands"
             "avante_mentions"
             "avante_files"
           ];
           providers = {
-            codeium = {
-              name = "codeium";
+            windsurf = {
+              name = "windsurf";
               module = "blink.compat.source";
               score_offset = 8;
               enabled = true;

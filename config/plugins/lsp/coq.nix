@@ -37,6 +37,6 @@
       ];
     };
 
-    codeium-vim.enable = true;
+    windsurf-nvim.enable = true;
   };
 }
