@@ -1,11 +1,11 @@
 {
   plugins.nvim-tree = {
     enable = true;
-    disable_netrw = true;
     openOnSetup = true;
-    reload_on_bufenter = true;
-    respect_buf_cwd = true;
     settings = {
+      reload_on_bufenter = true;
+      respect_buf_cwd = true;
+      disable_netrw = true;
       view = {
         adaptive_size = true;
         side = "left";
@@ -28,8 +28,9 @@
         # -- icons = {hint = ""; info = ""; warning = ""; error = ""};
       };
       filters = {
-        dotfiles = true;
-        custom = [".*\\~" "build$" "gradle$" "gradlew" "node_modules"];
+        dotfiles = false;
+        custom = [ ".*\\~" ".envrc" ".direnv" "dist" "build$" "gradle$" "gradlew" "node_modules"];
+        exclude = [".env" ".env.*"];
       };
       filesystem_watchers = {
         enable = true;
