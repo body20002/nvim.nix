@@ -1,10 +1,17 @@
-{
+{lib, ...}: {
   plugins = {
     friendly-snippets.enable = true;
     blink-compat.enable = true;
     blink-cmp = {
       enable = true;
       settings = {
+        enabled = lib.nixvim.mkRaw ''
+          function()
+            return not vim.tbl_contains({ "NvimTree" }, vim.bo.filetype)
+              and vim.bo.buftype ~= "prompt"
+              and vim.b.completion ~= false
+          end
+        '';
         keymap = {
           preset = "none";
           "<C-space>" = ["show" "show_documentation" "hide_documentation"];
@@ -40,16 +47,16 @@
             "lsp"
             "path"
             "snippets"
-            "windsurf"
+            "codeium"
             "minuet"
             "avante_commands"
             "avante_mentions"
             "avante_files"
           ];
           providers = {
-            windsurf = {
-              name = "windsurf";
-              module = "blink.compat.source";
+            codeium = {
+              name = "Codeium";
+              module = "codeium.blink";
               score_offset = 8;
               enabled = true;
               async = true;

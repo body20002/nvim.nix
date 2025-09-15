@@ -1,7 +1,7 @@
-{pkgs, ...}: {
+ {
   plugins = {
     minuet = {
-      enable = true;
+      enable = false;
       settings = {
         provider = "openai_fim_compatible";
         n_completions = 3;
@@ -49,28 +49,27 @@
     avante = {
       enable = true;
       settings = {
-        provider = "kimi";
+        provider = "glm";
         providers = {
-          kimi = {
+          groq-gpt-oss = {
             __inherited_from = "openai";
             api_key_name = "cmd:cat /run/secrets/api-keys/groq";
             endpoint = "https://api.groq.com/openai/v1/";
-            model = "moonshotai/kimi-k2-instruct";
-            max_tokens = 4096;
+            model = "openai/gpt-oss-120b";
           };
-          openrouter-qwen = {
+          openrouter-gpt-oss = {
+            __inherited_from = "openai";
+            endpoint = "https://openrouter.ai/api/v1";
+            api_key_name = "cmd:cat /run/secrets/api-keys/openrouter";
+            model = "openai/gpt-oss-120b:free";
+          };
+          qwen = {
             __inherited_from = "openai";
             endpoint = "https://openrouter.ai/api/v1";
             api_key_name = "cmd:cat /run/secrets/api-keys/openrouter";
             model = "qwen/qwen3-coder:free";
           };
-          openrouter-horizon = {
-            __inherited_from = "openai";
-            endpoint = "https://openrouter.ai/api/v1";
-            api_key_name = "cmd:cat /run/secrets/api-keys/openrouter";
-            model = "openrouter/horizon-beta";
-          };
-          openrouter-glm = {
+          glm = {
             __inherited_from = "openai";
             endpoint = "https://openrouter.ai/api/v1";
             api_key_name = "cmd:cat /run/secrets/api-keys/openrouter";

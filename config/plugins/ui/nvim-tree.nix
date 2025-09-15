@@ -1,11 +1,11 @@
 {
   plugins.nvim-tree = {
     enable = true;
-    disableNetrw = true;
+    disable_netrw = true;
     openOnSetup = true;
-    reloadOnBufenter = true;
-    respectBufCwd = true;
-    extraOptions = {
+    reload_on_bufenter = true;
+    respect_buf_cwd = true;
+    settings = {
       view = {
         adaptive_size = true;
         side = "left";
