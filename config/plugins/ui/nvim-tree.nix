@@ -29,8 +29,8 @@
       };
       filters = {
         dotfiles = false;
-        custom = [ ".*\\~" ".envrc" ".direnv" "dist" "build$" "gradle$" "gradlew" "node_modules"];
-        exclude = [".env" ".env.*"];
+        custom = [ ".*\\~" ".git" ".envrc" ".direnv" "dist" "build$" "gradle$" "gradlew" "node_modules"];
+        exclude = [".env" ".env\.*"];
       };
       filesystem_watchers = {
         enable = true;

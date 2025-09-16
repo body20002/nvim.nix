@@ -48,7 +48,7 @@
             "path"
             "snippets"
             "codeium"
-            "minuet"
+            # "minuet"
             "avante_commands"
             "avante_mentions"
             "avante_files"
@@ -80,14 +80,14 @@
               score_offset = 1000;
               opts = {};
             };
-            minuet = {
-              name = "minuet";
-              module = "minuet.blink";
-              score_offset = 8;
-              enabled = true;
-              async = true;
-              timeout_ms = 10000; # 10 secs;
-            };
+            # minuet = {
+            #   name = "minuet";
+            #   module = "minuet.blink";
+            #   score_offset = 8;
+            #   enabled = true;
+            #   async = true;
+            #   timeout_ms = 10000; # 10 secs;
+            # };
           };
         };
         completion = {
