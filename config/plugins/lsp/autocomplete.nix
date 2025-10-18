@@ -17,16 +17,17 @@
           "<C-space>" = ["show" "show_documentation" "hide_documentation"];
           "<C-e>" = ["hide" "fallback"];
           "<Tab>" = [
-            {
-              __raw = ''
-                function(_)
-                  if require('minuet.virtualtext').action.is_visible() then
-                    vim.defer_fn(require('minuet.virtualtext').action.accept, 30)
+            (lib.nixvim.mkRaw ''
+              function(_)
+                local ok, minuet = pcall(require, "minuet.virtualtext")
+                if ok then
+                  if minuet.action.is_visible() then
+                    vim.defer_fn(minuet.action.accept, 30)
                     return true
                   end
                 end
-              '';
-            }
+              end
+            '')
             "select_next"
             "snippet_forward"
             "fallback"
