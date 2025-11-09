@@ -2,7 +2,6 @@
   plugins = {
     leap = {
       enable = true;
-      addDefaultMappings = true;
     };
     flit = {
       enable = true;
