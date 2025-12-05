@@ -96,7 +96,7 @@
     -- the below two lines are escaped using the trible single quotes, if you are using lua remove one single quote!
     map('n', '<leader>o', ":pu =''' <CR> ", {noremap = true}) -- Insert a newline and back to normal mode
     map('n', '<leader>O', ":pu! ='''<CR>", {noremap = true}) -- Insert a newline and back to normal mode
-    vim.keymap.del({ "x", "o" }, "x")
-    vim.keymap.del({ "x", "o" }, "X")
+    vim.keymap.set({ "x", "o" }, "x", "<Nop>")
+    vim.keymap.set({ "x", "o" }, "X", "<Nop>")
   '';
 }

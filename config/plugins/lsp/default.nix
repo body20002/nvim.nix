@@ -77,7 +77,7 @@
     ];
     servers = {
       "*" = {
-        settings = {
+        config = {
           capabilities = {
             textDocument = {
               semanticTokens = {
@@ -100,14 +100,14 @@
       lua_ls.enable = true;
       marksman = {
         enable = true;
-        settings = {
+        config = {
           filetypes = ["md" "markdown"];
         };
       };
       nixd.enable = true;
       pyright = {
         enable = true;
-        settings = {
+        config = {
           typeCheckingMode = "strict";
           disableOrganizeImports = false;
           analysis = {
@@ -120,7 +120,7 @@
       ruff.enable = true;
       rust_analyzer = {
         enable = true;
-        settings = {
+        config = {
           installRustc = false;
           installCargo = false;
         };
