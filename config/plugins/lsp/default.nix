@@ -129,6 +129,11 @@
       tailwindcss.enable = true;
       ts_ls.enable = true;
       yamlls.enable = true;
+
+      # PHP
+      laravel_ls.enable = true;
+      phpactor.enable = true;
+      phan.enable = true;
     };
   };
 
