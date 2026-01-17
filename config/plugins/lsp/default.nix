@@ -123,6 +123,19 @@
         config = {
           installRustc = false;
           installCargo = false;
+          settings = {
+            cargo = {
+              features = "all";
+            };
+            procMacro = {
+              ignored = {
+                leptos_macro = [
+                  "component"
+                  "server"
+                ];
+              };
+            };
+          };
         };
       };
       statix.enable = true;
@@ -131,6 +144,7 @@
       yamlls.enable = true;
 
       # PHP
+      intelephense.enable = true;
       laravel_ls.enable = true;
       phpactor.enable = true;
       phan.enable = true;
