@@ -183,6 +183,7 @@
         formatting = {
           alejandra.enable = true;
           xmllint.enable = true;
+          leptosfmt.enable = true;
         };
       };
     };
