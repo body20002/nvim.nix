@@ -19,7 +19,7 @@ jobs:
           persist-credentials: true
 
       - name: Install Nix with flakes support
-        uses: DeterminateSystems/nix-installer-action@v9
+        uses: DeterminateSystems/nix-installer-action@v21
 
       - name: Update flake
         run: nix flake update
