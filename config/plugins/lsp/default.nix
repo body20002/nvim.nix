@@ -105,18 +105,7 @@
         };
       };
       nixd.enable = true;
-      pyright = {
-        enable = true;
-        config = {
-          typeCheckingMode = "strict";
-          disableOrganizeImports = false;
-          analysis = {
-            useLibraryCodeForTypes = true;
-            autoSearchPaths = true;
-            autoImportCompletions = true;
-          };
-        };
-      };
+      ty.enable = true;
       ruff.enable = true;
       rust_analyzer = {
         enable = true;
