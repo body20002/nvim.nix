@@ -58,6 +58,9 @@
     concealcursor = "";
     # -- updatetime = 100;
     #
+    # -- Auto-reload files changed on disk
+    autoread = true;
+
     # -- Backup -- I have power issues :/;
     backup = true;
     backupcopy = "yes";

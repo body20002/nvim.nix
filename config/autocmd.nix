@@ -5,9 +5,16 @@
     centerScreen.clear = true;
     openMediaFiles.clear = true;
     saveFolds.clear = true;
+    autoReload.clear = true;
   };
 
   autoCmd = [
+    {
+      event = ["FocusGained" "BufEnter" "CursorHold" "CursorHoldI"];
+      pattern = "*";
+      command = "checktime";
+      group = "autoReload";
+    }
     {
       event = ["BufWritePost"];
       command = "silent !pdfroff -ms % -e -t -p > %:r.pdf";
