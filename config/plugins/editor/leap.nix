@@ -2,6 +2,11 @@
   plugins = {
     leap = {
       enable = true;
+      settings = {
+        vim_opts = {
+          "go.ignorecase" = false;
+        };
+      };
     };
     flit = {
       enable = true;
