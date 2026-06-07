@@ -3,11 +3,11 @@
     "decisive": {
       "flake": false,
       "locked": {
-        "lastModified": 1749120084,
-        "narHash": "sha256-uy+Nj+hfeei8nquZCzIxDYf1eQsaPMX26IMh/opOwG0=",
+        "lastModified": 1780738606,
+        "narHash": "sha256-UTMlrTVgpoXoakQPONWJ09eNCEeCxAscK2OdBGYHfNI=",
         "owner": "emmanueltouzery",
         "repo": "decisive.nvim",
-        "rev": "c401541b8429b787d7dcb441e43bee63fc94737c",
+        "rev": "3bdee1e650a5ed39f24042ca293f49bb01bcc5c3",
         "type": "github"
       },
       "original": {
