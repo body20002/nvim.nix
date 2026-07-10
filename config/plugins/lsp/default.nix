@@ -143,6 +143,9 @@
       ts_ls.enable = true;
       yamlls.enable = true;
 
+      # Godot
+      gdscript.enable = true;
+
       # PHP
       intelephense.enable = true;
       laravel_ls.enable = true;
