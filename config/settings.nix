@@ -71,5 +71,8 @@
     # -- arabic support;
     encoding = "utf-8";
     termbidi = true;
+
+    # -- local project overrides
+    exrc = true;
   };
 }
