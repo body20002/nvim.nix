@@ -22,7 +22,9 @@
       callback = {
         __raw = ''
           function()
-            pcall(vim.lsp.buf.code_action, {context = {only = {"source.organizeImports"}}})
+            local client = vim.lsp.get_clients({name = "biome", bufnr = 0})[1]
+            if not client then return end
+            pcall(vim.lsp.buf.code_action, {client_id = client.id, context = {only = {"source.organizeImports"}}})
           end
         '';
         group = "organizeImports";
