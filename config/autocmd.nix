@@ -6,6 +6,7 @@
     openMediaFiles.clear = true;
     saveFolds.clear = true;
     autoReload.clear = true;
+    organizeImports.clear = true;
   };
 
   autoCmd = [
@@ -14,6 +15,18 @@
       pattern = "*";
       command = "checktime";
       group = "autoReload";
+    }
+    {
+      event = ["BufWritePre"];
+      pattern = ["*.ts" "*.tsx" "*.js" "*.jsx" "*.mjs" "*.cjs"];
+      callback = {
+        __raw = ''
+          function()
+            pcall(vim.lsp.buf.code_action, {context = {only = {"source.organizeImports"}}})
+          end
+        '';
+        group = "organizeImports";
+      };
     }
     {
       event = ["BufWritePost"];
