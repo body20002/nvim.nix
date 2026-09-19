@@ -1,4 +1,4 @@
-{
+{lib, ...}: {
   imports = [
     ./lintting.nix
     ./autocomplete.nix
@@ -75,83 +75,88 @@
         mode = "n";
       }
     ];
-    servers = {
-      "*" = {
-        config = {
-          capabilities = {
-            textDocument = {
-              semanticTokens = {
-                multilineTokenSupport = true;
+    servers =
+      {
+        "*" = {
+          config = {
+            capabilities = {
+              textDocument = {
+                semanticTokens = {
+                  multilineTokenSupport = true;
+                };
+              };
+            };
+            root_markers = [
+              ".git"
+            ];
+          };
+        };
+      }
+      # Config only: no server binaries are bundled here.
+      # Each server is expected on $PATH, provided by the project itself (e.g. via its devshell).
+      // lib.mapAttrs (_: server: server // { package = null; }) {
+        bashls.enable = true;
+        biome.enable = true;
+        clangd.enable = true;
+        docker_compose_language_service.enable = true;
+        dockerls.enable = true;
+        gopls.enable = true;
+        kotlin_language_server.enable = true;
+        lua_ls.enable = true;
+        marksman = {
+          enable = true;
+          config = {
+            filetypes = ["md" "markdown"];
+          };
+        };
+        nixd.enable = true;
+        pyright = {
+          enable = true;
+          config = {
+            typeCheckingMode = "strict";
+            disableOrganizeImports = false;
+            analysis = {
+              useLibraryCodeForTypes = true;
+              autoSearchPaths = true;
+              autoImportCompletions = true;
+            };
+          };
+        };
+        ruff.enable = true;
+        rust_analyzer = {
+          enable = true;
+          config = {
+            installRustc = false;
+            installCargo = false;
+            settings = {
+              cargo = {
+                features = "all";
+              };
+              procMacro = {
+                ignored = {
+                  leptos_macro = [
+                    "component"
+                    "server"
+                  ];
+                };
               };
             };
           };
-          root_markers = [
-            ".git"
-          ];
         };
-      };
-      bashls.enable = true;
-      biome.enable = true;
-      clangd.enable = true;
-      docker_compose_language_service.enable = true;
-      dockerls.enable = true;
-      gopls.enable = true;
-      kotlin_language_server.enable = true;
-      lua_ls.enable = true;
-      marksman = {
-        enable = true;
-        config = {
-          filetypes = ["md" "markdown"];
-        };
-      };
-      nixd.enable = true;
-      pyright = {
-        enable = true;
-        config = {
-          typeCheckingMode = "strict";
-          disableOrganizeImports = false;
-          analysis = {
-            useLibraryCodeForTypes = true;
-            autoSearchPaths = true;
-            autoImportCompletions = true;
-          };
-        };
-      };
-      ruff.enable = true;
-      rust_analyzer = {
-        enable = true;
-        config = {
-          installRustc = false;
-          installCargo = false;
-          settings = {
-            cargo = {
-              features = "all";
-            };
-            procMacro = {
-              ignored = {
-                leptos_macro = [
-                  "component"
-                  "server"
-                ];
-              };
-            };
-          };
-        };
-      };
-      statix.enable = true;
-      tailwindcss.enable = true;
-      ts_ls.enable = true;
-      yamlls.enable = true;
+        statix.enable = true;
+        tailwindcss.enable = true;
+        ts_ls.enable = true;
+        yamlls.enable = true;
 
-      # Godot
-      gdscript.enable = true;
+        # Godot
+        gdscript.enable = true;
 
-      # PHP
-      intelephense.enable = true;
-      laravel_ls.enable = true;
-      phpactor.enable = true;
-      phan.enable = true;
-    };
+        # PHP
+        intelephense.enable = true;
+        laravel_ls.enable = true;
+        phpactor.enable = true;
+        phan.enable = true;
+      };
   };
 
   plugins = {
