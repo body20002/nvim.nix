@@ -1,7 +1,6 @@
 {lib, ...}: {
   plugins = {
     friendly-snippets.enable = true;
-    blink-compat.enable = true;
     blink-cmp = {
       enable = true;
       settings = {
@@ -50,9 +49,6 @@
             "snippets"
             "codeium"
             # "minuet"
-            "avante_commands"
-            "avante_mentions"
-            "avante_files"
           ];
           providers = {
             codeium = {
@@ -62,24 +58,6 @@
               enabled = true;
               async = true;
               timeout_ms = 10000; # 10 secs;
-            };
-            avante_commands = {
-              name = "avante_commands";
-              module = "blink.compat.source";
-              score_offset = 90;
-              opts = {};
-            };
-            avante_files = {
-              name = "avante_commands";
-              module = "blink.compat.source";
-              score_offset = 100;
-              opts = {};
-            };
-            avante_mentions = {
-              name = "avante_mentions";
-              module = "blink.compat.source";
-              score_offset = 1000;
-              opts = {};
             };
             # minuet = {
             #   name = "minuet";

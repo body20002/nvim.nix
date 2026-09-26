@@ -2,7 +2,6 @@
   imports = [
     ./comments.nix
     ./leap.nix
-    ./harpoon.nix
     ./telescope.nix
     ./treesitter.nix
     ./csv.nix

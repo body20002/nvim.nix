@@ -1,14 +1,23 @@
 {
+  # Drop Neovim's Ruby/Python/Perl host providers (Perl was already off).
+  withRuby = false;
+  withPython3 = false;
+  withPerl = false;
+  # Plugins that shell out to git use the system one; the none-ls gitsigns
+  # code-action source still bundles git directly.
+  dependencies.git.enable = false;
+
   diagnostic.settings = {
     virtual_lines = {
       only_current_line = true;
     };
   };
   globals.mapleader = " ";
-  clipboard = {
-    providers.wl-copy.enable = true;
-    register = "unnamedplus";
-  };
+  # Use Neovim's built-in OSC52 clipboard provider instead of bundling
+  # wl-clipboard (and its xdg-utils/perl/glib/systemd chain). Re-enable
+  # waylandSupport / clipboard.providers.wl-copy if your terminal lacks OSC52.
+  waylandSupport = false;
+  clipboard.register = "unnamedplus";
   opts = {
     relativenumber = true;
     number = true;

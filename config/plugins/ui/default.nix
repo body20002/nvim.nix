@@ -14,6 +14,5 @@
     indent-blankline.enable = true;
     web-devicons.enable = true;
     markview.enable = true;
-    markdown-preview.enable = true;
   };
 }

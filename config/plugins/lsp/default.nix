@@ -1,4 +1,8 @@
-{lib, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
     ./lintting.nix
     ./autocomplete.nix
@@ -182,7 +186,12 @@
       enable = true;
       sources = {
         code_actions = {
-          gitsigns.enable = true;
+          # gitMinimal still provides the `git` binary gitsigns needs, without
+          # pulling git's python/perl/doc closure.
+          gitsigns = {
+            enable = true;
+            package = pkgs.gitMinimal;
+          };
         };
         diagnostics = {
           actionlint.enable = true;

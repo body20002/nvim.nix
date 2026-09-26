@@ -1,4 +1,13 @@
- {
+{pkgs, ...}: {
+  # windsurf.nvim ships its own pinned codeium language server (1.20.9), so
+  # opt out of nixvim's default codeium dependency to avoid a second copy
+  # (pkgs.codeium 2.12.5, ~169M).
+  dependencies.codeium.enable = false;
+
+  # windsurf only uses util-linux for flock/setsid/script; the minimal build
+  # keeps those and drops the rest of the suite.
+  dependencies.util-linux.package = pkgs.util-linuxMinimal;
+
   plugins = {
     minuet = {
       enable = false;
@@ -36,45 +45,14 @@
     windsurf-nvim = {
       enable = true;
       settings = {
-        enable_cmp_source = true;
+        # blink-cmp uses codeium.blink directly; don't register an nvim-cmp source.
+        enable_cmp_source = false;
         workspace_root = {
           use_lsp = true;
         };
         key_bindings = {
           next = "<C-]>";
           prev = "<C-[>";
-        };
-      };
-    };
-    avante = {
-      enable = true;
-      settings = {
-        provider = "glm";
-        providers = {
-          groq-gpt-oss = {
-            __inherited_from = "openai";
-            api_key_name = "cmd:cat /run/secrets/api-keys/groq";
-            endpoint = "https://api.groq.com/openai/v1/";
-            model = "openai/gpt-oss-120b";
-          };
-          openrouter-gpt-oss = {
-            __inherited_from = "openai";
-            endpoint = "https://openrouter.ai/api/v1";
-            api_key_name = "cmd:cat /run/secrets/api-keys/openrouter";
-            model = "openai/gpt-oss-120b:free";
-          };
-          qwen = {
-            __inherited_from = "openai";
-            endpoint = "https://openrouter.ai/api/v1";
-            api_key_name = "cmd:cat /run/secrets/api-keys/openrouter";
-            model = "qwen/qwen3-coder:free";
-          };
-          glm = {
-            __inherited_from = "openai";
-            endpoint = "https://openrouter.ai/api/v1";
-            api_key_name = "cmd:cat /run/secrets/api-keys/openrouter";
-            model = "z-ai/glm-4.5-air:free";
-          };
         };
       };
     };
